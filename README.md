@@ -1,28 +1,52 @@
-# Arreglos
+# Arreglos de ventas
 
-¿En qué consiste el programa?
+## ¿En qué consiste el programa?
 
-Este programa está realizado en Python y utiliza un arreglo bidimensional para almacenar las ventas de tres departamentos: Ropa, Deportes y Juguetería, durante los 12 meses del año.
+Este programa utiliza un arreglo bidimensional (matriz) para guardar las ventas de tres departamentos: Ropa, Deportes y Juguetería, durante los 12 meses del año.
 
-El programa genera datos de ventas aleatorios y permite insertar, buscar y eliminar una venta específica.
+Cada fila representa un mes y cada columna representa un departamento. El programa genera cantidades de ventas aleatorias entre $1,000 y $5,000 para llenar la matriz.
 
-Métodos utilizados
-insertar_venta()
+Además, cuenta con métodos para insertar, buscar y eliminar ventas.
 
-Sirve para agregar una venta en un mes y departamento específico. Recibe el índice del mes, el índice del departamento y el monto de la venta. Después guarda el monto en la matriz.
+## ¿Cómo funciona cada método?
 
-buscar_venta()
+### 1. insertar_venta()
 
-Sirve para buscar una venta específica. Recibe el mes y el departamento, obtiene el monto almacenado y lo muestra en pantalla.
+Este método sirve para agregar una venta en un mes y departamento específico.
 
-eliminar_venta()
+Recibe tres datos:
 
-Sirve para eliminar una venta. Para hacerlo, cambia el valor de esa posición de la matriz a 0.
+- `mes_index`: indica el mes.
+- `depto_index`: indica el departamento.
+- `monto`: cantidad de la venta.
 
-Funcionamiento del programa
+Primero verifica que los índices sean correctos y después guarda el monto en la matriz.
 
-Primero se crean los arreglos de meses y departamentos. Después se crea una matriz de 12 filas por 3 columnas, inicialmente llena de ceros.
+### 2. buscar_venta()
 
-Después se generan ventas aleatorias entre $1,000 y $5,000 y se almacenan en la matriz mediante el método insertar_venta().
+Este método sirve para consultar una venta específica.
 
-Finalmente, el programa realiza una búsqueda de una venta y prueba la eliminación de otra venta.
+Recibe el número del mes y el departamento, busca la cantidad almacenada y la muestra en pantalla. También devuelve el monto encontrado.
+
+Si los índices no son correctos, muestra un mensaje indicando que están fuera de rango.
+
+### 3. eliminar_venta()
+
+Este método sirve para eliminar una venta específica.
+
+En lugar de borrar físicamente el espacio de la matriz, cambia el valor de esa venta a 0, indicando que ya no existe una venta registrada en esa posición.
+
+## Funcionamiento general
+
+Primero se crean los arreglos con los meses y departamentos. Después se crea una matriz de 12 × 3, inicialmente llena de ceros.
+
+Posteriormente, el programa utiliza `random.randint()` para generar ventas aleatorias y las almacena mediante `insertar_venta()`.
+
+Finalmente, se prueba la búsqueda de una venta de febrero en Deportes y se elimina una venta de enero en Ropa, comprobando después que su valor quedó en $0.
+
+## Lenguajes
+
+El programa se realiza en:
+
+- Python
+- Java
